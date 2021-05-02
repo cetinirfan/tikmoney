@@ -10,10 +10,14 @@ app.set('api_key', config.api_key);
 
 const index = require('./routes/index');
 const users = require('./routes/users');
+const anno = require('./routes/anno');
+const store = require('./routes/store');
+const task = require('./routes/task');
+const support = require('./routes/support');
 
 const db = require('./services/mongodb.js')();
 
-
+ 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -26,6 +30,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users)
+app.use('/anno', anno)
+app.use('/store', store)
+app.use('/task', task)
+app.use('/support', support)
+
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
