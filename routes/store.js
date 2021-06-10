@@ -5,9 +5,9 @@ const StoreRequest = require('../services/modals/StoreRequest');
 const Users = require('../services/modals/Users');
 const verifyToken = require('../services/middleware/verify-token');
 require('dotenv').config();
-
-const admin = require("firebase-admin");
 const fs = require("fs");
+/*
+const admin = require("firebase-admin");
 let NotToken = "fouFlfmbQp-I4OOSLT3tYy:APA91bEoBz45fsuD2ee0vCQhk4GqqgtQollbsoXXrLfZ9N25J_J4vxwWQdKRyyw79ed4CJZnDDLK8Q_KEmehH52FBX8DGi0cla-N76iFWOmtLh7PFoq9kBZNI3EtKlsqO7108TCXMGFG"
 
 var serviceAccount = require("./tikmoney-a6261-firebase-adminsdk-2dmpm-8455a8abb9.json");
@@ -31,7 +31,7 @@ router.get('/send',(req,res)=>{
         res.json('err')
     })
     
-});
+});*/
 
 router.get('/getStore',verifyToken,(req,res)=>{
     Users.findOne({_id:req.user_id})
